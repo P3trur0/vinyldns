@@ -56,12 +56,12 @@
             };
 
             $scope.approve = function() {
-                $scope.reviewConfirmationMsg = "Are you sure you want to approve this DNS Change?"
+                $scope.reviewConfirmationMsg = "Are you sure you want to approve this DNS Request?"
                 $scope.reviewType = "approve";
             }
 
             $scope.reject = function() {
-                $scope.reviewConfirmationMsg = "Are you sure you want to reject this DNS Change?"
+                $scope.reviewConfirmationMsg = "Are you sure you want to reject this DNS Request?"
                 $scope.reviewType = "reject";
             }
 
@@ -88,7 +88,7 @@
                                     $scope.batch.changes[i].validationErrors = []
                                 }
                             }
-                            var errorAlert = {data: "Issues still remain, cannot approve DNS Change. Resolve all outstanding issues or reject the DNS Change.", status: error.status}
+                            var errorAlert = {data: "Issues still remain, cannot approve DNS Request. Resolve all outstanding issues or reject the DNS Request.", status: error.status}
                             handleError(errorAlert, 'dnsChangesService::approveBatchChange-failure');
                         } else {
                             handleError(error, 'dnsChangesService::approveBatchChange-failure');
@@ -121,7 +121,7 @@
             $scope.confirmCancel = function() {
                 $("#cancel_batch_change").modal("hide");
                 function success(response) {
-                    var alert = utilityService.success('Successfully cancelled DNS Change', response, 'cancelBatchChange: cancelBatchChange successful');
+                    var alert = utilityService.success('Successfully cancelled DNS Request', response, 'cancelBatchChange: cancelBatchChange successful');
                     $scope.alerts.push(alert);
                     $scope.refresh();
                 }

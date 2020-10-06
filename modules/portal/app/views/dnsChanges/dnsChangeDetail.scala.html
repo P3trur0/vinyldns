@@ -7,7 +7,7 @@
     <!-- BREADCRUMB -->
     <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li><a href="/dnschanges">DNS Changes</a></li>
+        <li><a href="/dnschanges">DNS Requests</a></li>
         <li class="active">{{batch.id}}</li>
     </ul>
     <!-- END BREADCRUMB -->
@@ -15,7 +15,7 @@
     <!-- PAGE TITLE -->
     <div class="page-title">
         <h3>
-            <span class="fa fa-list-ol"></span> DNS Change
+            <span class="fa fa-list-ol"></span> DNS Request
             <span ng-if="batch.status == 'Complete'" class="label label-success">{{batch.status}}</span>
             <span ng-if="batch.status == 'Failed'" class="label label-danger">{{batch.status}}</span>
             <span ng-if="batch.status == 'PartialFailure'" class="label label-warning">Partial Failure</span>
@@ -171,7 +171,7 @@
                 @if(rootAccountCanReview) {
                     <div ng-if="batch.approvalStatus == 'PendingReview'" class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Review DNS Change</h3>
+                            <h3 class="panel-title">Review DNS Request</h3>
                         </div>
                         <div class="panel-body">
                             <label>Review Comment (optional):</label> <input type="text" ng-model="$parent.reviewComment">
@@ -194,9 +194,9 @@
             </div>
         </div>
     </div>
-<modal modal-id="cancel_batch_change" modal-title="Cancel DNS Change" modal-size="modal-sm">
+<modal modal-id="cancel_batch_change" modal-title="Cancel DNS Request" modal-size="modal-sm">
     <modal-body>
-        <p>Are you sure you want to cancel this DNS Change?</p>
+        <p>Are you sure you want to cancel this DNS Request?</p>
     </modal-body>
     <modal-footer>
             <span>
@@ -210,4 +210,4 @@
 
 @plugins = {}
 
-@main(rootAccountName)("DnsChangeDetailController")("DNS Change")(content)(plugins)
+@main(rootAccountName)("DnsChangeDetailController")("DNS Request")(content)(plugins)

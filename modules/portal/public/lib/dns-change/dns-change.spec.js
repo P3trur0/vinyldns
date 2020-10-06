@@ -105,7 +105,7 @@ describe('BatchChange', function(){
                 deferred.reject({data: errorData, status: 400});
                 this.rootScope.$apply();
 
-                expect(this.scope.alerts).toEqual([{ type: 'danger', content: "HTTP 400 (undefined): Issues still remain, cannot approve DNS Change. Resolve all outstanding issues or reject the DNS Change." }]);
+                expect(this.scope.alerts).toEqual([{ type: 'danger', content: "HTTP 400 (undefined): Issues still remain, cannot approve DNS Request. Resolve all outstanding issues or reject the DNS Request." }]);
             }));
         });
 

@@ -7,12 +7,12 @@
     <!-- BREADCRUMB -->
     <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li class="active">DNS Changes</li>
+        <li class="active">DNS Requests</li>
     </ul>
     <!-- END BREADCRUMB -->
 
     <!-- PAGE TITLE -->
-    <div class="page-title"><h3><span class="fa fa-list-ol"></span> DNS Changes {{ getPageTitle() }}</h3></div>
+    <div class="page-title"><h3><span class="fa fa-list-ol"></span> DNS Requests {{ getPageTitle() }}</h3></div>
     <!-- END PAGE TITLE -->
 
     <!-- PAGE CONTENT WRAPPER -->
@@ -41,7 +41,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading vinyldns-panel-top">
                         <div class="btn-group">
-                            <a href="/dnschanges/new" class="btn btn-default"><span class="fa fa-plus"></span> New DNS Change</a>
+                            <a href="/dnschanges/new" class="btn btn-default"><span class="fa fa-plus"></span> New DNS Request</a>
                         </div>
                         @if(meta.manualBatchChangeReviewEnabled){
                             <div class="batch-filter">
@@ -109,9 +109,9 @@
                                             Cancel
                                         </a>
                                     </td>
-                                    <modal modal-id="cancel_batch_change" modal-title="Cancel DNS Change" modal-size="modal-md">
+                                    <modal modal-id="cancel_batch_change" modal-title="Cancel DNS Request" modal-size="modal-md">
                                         <modal-body>
-                                            <p>Are you sure you want to cancel DNS Change {{ currentBatchChange.id }}?</p>
+                                            <p>Are you sure you want to cancel DNS Request {{ currentBatchChange.id }}?</p>
                                         </modal-body>
                                         <modal-footer>
                                             <span>
@@ -154,4 +154,4 @@
 
 @plugins = {}
 
-@main(rootAccountName)("DnsChangesController")("DNS Changes")(content)(plugins)
+@main(rootAccountName)("DnsChangesController")("DNS Requests")(content)(plugins)

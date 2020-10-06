@@ -122,7 +122,7 @@
                 $("#cancel_batch_change").modal("hide");
 
                 function success(response) {
-                    var alert = utilityService.success('Successfully cancelled DNS Change', response, 'cancelBatchChange: cancelBatchChange successful');
+                    var alert = utilityService.success('Successfully cancelled DNS Request', response, 'cancelBatchChange: cancelBatchChange successful');
                     $scope.alerts.push(alert);
                     $scope.refreshBatchChanges();
                 }
